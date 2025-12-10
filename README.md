@@ -1,5 +1,16 @@
-# cheshires-gaze 
+# Chashire's Gaze Badge System
 
+Step into Cheshire’s Gaze, where badges are alive. Each one bears a name, a cryptic icon, and a counter that grows as eyes fall upon it. Use text, symbols, and logos to craft your sigil, and even turn the count into Roman numerals for a touch of arcane elegance.
+
+Harness the magic via URL query parameters.
+
+# Preview
+
+## ALPHA LANDING PAGE DEMO
+<img src='https://github.com/fkingnel/cheshires-gaze/blob/main/gallery/chesiresgazepreview.PNG?raw=true'>
+
+## EARLY METRICS INTEGRATION DEMO
+<img src='https://github.com/fkingnel/cheshires-gaze/blob/main/gallery/chesiresgazepreviewmetrics.PNG?raw=true'>
 ## PROJECT IS STILL WORK IN PROGRESS AND NOT COMPLETED
 
 TO DO:
@@ -8,31 +19,33 @@ TO DO:
 - Host on Render
 - Complete README documentation
 
-## Preview
-<img src='https://github.com/fkingnel/cheshires-gaze/blob/main/gallery/chesiresgazepreview.PNG?raw=true'>
+# Query Parameters and Metrics
 
-## Chashire's Gaze Badge System
+| Query Parameter / Metric | Type   | Description                                         | Example                                                                                                           |
+| ------------------------ | ------ | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `username`               | string | User for badge view counter                          | `&username=fkingnel`                                                                                              |
+| `key`                    | string | Secret key for profile counter                       | `&key=a69bcdc3f3f12b37`                                                                                           |
+| `repo`                   | string | GitHub repo URL (required for GitHub metrics)       | `&repo=https://github.com/fkingnel/cheshires-gaze-badge-system`                                                  |
+| `leftItems`              | string | Left label sequence (icons, text, logos, metrics)  | `&leftItems=:stars,Stars`                                                                                         |
+| `rightItems`             | string | Right label sequence                                 | `&rightItems=:stars`                                                                                               |
+| `height`                 | number | Badge height in px                                   | `&height=28`                                                                                                      |
+| `labelColors`            | string | Colors for left and right labels                     | `&labelColors=black,grey`                                                                                         |
+| `leftLink`               | string | Link for left label                                  | `&leftLink=https://github.com/fkingnel`                                                                          |
+| `rightLink`              | string | Link for right label                                 | `&rightLink=https://github.com/fkingnel/cheshires-gaze-badge-system`                                            |
+| `style`                  | string | Badge style (`flat`, `flat-square`, etc.)           | `&style=flat-square`                                                                                               |
+| `roman`                  | string | Show counts as Roman numerals                        | `&roman=true`                                                                                                     |
+| `:views`                 | metric | Local badge view count                                | `:views`                                                                                                          |
+| `:stars`                 | metric | GitHub stars                                         | `:stars`                                                                                                         |
+| `:forks`                 | metric | GitHub forks                                         | `:forks`                                                                                                         |
+| `:watchers`              | metric | GitHub watchers                                      | `:watchers`                                                                                                      |
+| `:open_issues`           | metric | Open issues                                         | `:open_issues`                                                                                                   |
+| `:size`                  | metric | Repo size (KB)                                      | `:size`                                                                                                          |
+| `:release_count`         | metric | Number of releases                                  | `:release_count`                                                                                                 |
+| `:contributors`          | metric | Number of contributors                               | `:contributors`                                                                                                  |
+| `:last_commit_age`       | metric | Age of last commit (hours)                           | `:last_commit_age`                                                                                               |
 
-Step into Cheshire’s Gaze, where badges are alive. Each one bears a name, a cryptic icon, and a counter that grows as eyes fall upon it. Use text, symbols, and logos to craft your sigil, and even turn the count into Roman numerals for a touch of arcane elegance.
 
-Harness the magic via URL query parameters.
-
-## Query Parameters and Features
-| Query Parameter | Type   | Description                                                                                                           | Example                                                                                                           |
-| --------------- | ------ | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `username`      | string | The username associated with the badge counter. Optional if you do not want use the tracking feature                                                                    | `&username=fkingnel`                                                                                              |
-| `key`           | string | The secret key for the user/profile to increment/view the count. Optional if you do not want use the tracking feature                                                    | `&key=XXXXXXXXXXXXXXXX`                                                                                           |
-| `leftItems`     | string | Comma-separated sequence for the left label. Can include **icons** (`heart:solid`), **logos** (image URLs), **text**, and `{count}` for dynamic counter placement. | `&leftItems=knife:custom,github:brands,{count},https://avatars.githubusercontent.com/u/69657658?v=4,hi`                        |
-| `rightItems`    | string | Comma-separated sequence for the right label. Same as `leftItems`. Supports icons, logos, text, and `{count}`.       | `&rightItems=star:regular,heart:solid,{count},https://avatars.githubusercontent.com/u/69657658?v=4,viewers`                   |
-| `height`        | number | Height of the badge in pixels.                                                                                        | `&height=28`                                                                                                      |
-| `labelColors`   | string | Comma-separated colors for left and right labels. Can use named colors or hex codes.                                  | `&labelColors=black,grey`                                                                                         |
-| `leftLink`      | string | URL the left label links to.                                                                                          | `&leftLink=https://github.com/fkingnel/`                                                                         |
-| `rightLink`     | string | URL the right label links to.                                                                                         | `&rightLink=https://github.com/fkingnel/cheshires-gaze/`                                                         |
-| `style`         | string | Badge style. Options: `flat`, `flat-square`, `plastic`, `for-the-badge`, `circular`.                                  | `&style=flat-square`                                                                                               |
-| `roman`         | string | Optional. Set to `"true"` to display counts as Roman numerals.                                                        | `&roman=true`                                                                                                     |
-
-
-### fontawesome integration
+## Fontawesome Icon Integration
 
 Cheshire’s Gaze supports **over 2,000 Font Awesome icons** from the free **Brands** and **Classic** collections. You can use them in your badge via the `leftItems` or `rightItems` query parameters.
 
